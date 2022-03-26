@@ -63,15 +63,15 @@ class CryptoHandler {
             else -> "Ocorreu um erro inesperado"
         }
 
-        val novaCrypto: Crypto? = cryptoSalvo as? Crypto
+        val novoCrypto: Crypto? = cryptoSalvo as? Crypto
 
-        novaCrypto?.id = crypto!!.id
-        novaCrypto?.nome = crypto!!.nome
-        novaCrypto?.desde = crypto!!.desde
+        novoCrypto?.id = crypto!!.id
+        novoCrypto?.nome = crypto!!.nome
+        novoCrypto?.desde = crypto!!.desde
 
         return ServerResponse.status(HttpStatus.OK)
             .contentType(MediaType.APPLICATION_JSON)
-            .body(Mono.just(novaCrypto!!), Crypto::class.java)
+            .body(Mono.just(novoCrypto!!), Crypto::class.java)
     }
 
 }
