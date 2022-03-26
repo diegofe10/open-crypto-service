@@ -2,6 +2,7 @@ package com.open.crypto.api.router
 
 import com.open.crypto.api.domain.annotations.Router
 import com.open.crypto.api.handler.CryptoHandler
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.http.MediaType
 import org.springframework.web.reactive.function.server.RequestPredicates
@@ -11,7 +12,7 @@ import org.springframework.web.reactive.function.server.RouterFunctions
 import org.springframework.web.reactive.function.server.ServerResponse
 
 @Router
-class CryptoRouter(private val handler: CryptoHandler) {
+class CryptoRouter(@Autowired private val handler: CryptoHandler) {
 
     @Bean
     fun routerCryptos(): RouterFunction<ServerResponse> {
