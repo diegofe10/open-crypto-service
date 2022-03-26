@@ -24,7 +24,9 @@ class CryptoRouter(@Autowired private val handler: CryptoHandler) {
             POST("/api/v1/cryptos").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
                 handler::adicionar).andRoute(
             PUT("/api/v1/{id}/cryptos").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
-                handler::atualizar);
+                handler::atualizar).andRoute(
+            DELETE("/api/v1/{id}/cryptos").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)),
+                handler::remover)
     }
 
 }

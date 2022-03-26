@@ -73,4 +73,12 @@ class CryptoHandler {
             .body(Mono.just(novoCrypto!!), Crypto::class.java)
     }
 
+    fun remover(request: ServerRequest): Mono<ServerResponse> {
+        val cryptoId = request.pathVariable("id")
+
+        return ServerResponse.status(HttpStatus.OK)
+            .contentType(MediaType.APPLICATION_JSON)
+            .body(Mono.just("Removido o crypto de id $cryptoId"), String()::class.java)
+    }
+
 }
