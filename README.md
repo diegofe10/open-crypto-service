@@ -1,3 +1,3 @@
 ## Open Crypto Service
 
-#### API desenvolvida para fins didáticos. Todos os dados são meramente fictícios.
+#### Projeto desenvolvido para fins didáticos. Todos os dados são meramente fictícios.
